@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Casa de 4 dormitorios con ampliación en venta en Ortiz. US$ 12.500. Venta directa del propietario, sin comisión inmobiliaria.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="4 dormitorios con ampliación — Ortiz · US$ 12.500">
+<meta property="og:description" content="Venta directa del propietario, sin comisión inmobiliaria. 4 dormitorios, 2 cocinas, papeles al día.">
+<meta property="og:image" content="fotos/frente.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Casa 4 dormitorios con ampliación en venta – directo del propietario</title>
+<link rel="stylesheet" href="_ds/tiendas-montevideo-design-system-79cd809a-012d-4d43-91d0-0f93bd8ca616/tokens/colors.css">
+<link rel="stylesheet" href="_ds/tiendas-montevideo-design-system-79cd809a-012d-4d43-91d0-0f93bd8ca616/tokens/typography.css">
+<link rel="stylesheet" href="_ds/tiendas-montevideo-design-system-79cd809a-012d-4d43-91d0-0f93bd8ca616/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/tiendas-montevideo-design-system-79cd809a-012d-4d43-91d0-0f93bd8ca616/tokens/radius-shadow.css">
+<link rel="stylesheet" href="_ds/tiendas-montevideo-design-system-79cd809a-012d-4d43-91d0-0f93bd8ca616/styles.css">
+<script src="_ds/tiendas-montevideo-design-system-79cd809a-012d-4d43-91d0-0f93bd8ca616/_ds_bundle.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0;background:var(--slate-50);color:var(--slate-700);font-family:var(--font-body,'Mulish',sans-serif);}
+a{color:var(--blue-600);text-decoration:none}a:hover{color:var(--blue-700)}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:var(--slate-50);padding-bottom:{{ pagePadBottom }};">
+
+  <header style="position:sticky;top:0;z-index:20;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--slate-200);">
+    <div style="max-width:1280px;margin:0 auto;padding:12px clamp(16px,3vw,32px);display:flex;align-items:center;justify-content:space-between;gap:16px;">
+      <div style="display:flex;align-items:center;gap:12px;min-width:0;">
+        <div style="flex:none;width:36px;height:36px;border-radius:8px;background:var(--blue-600);display:flex;align-items:center;justify-content:center;">
+          <x-import component-from-global-scope="TiendasMontevideoDesignSystem_79cd80.Icon" name="mapPin" size="18" color="#fff" hint-size="18px,18px"></x-import>
+        </div>
+        <div style="display:flex;flex-direction:column;min-width:0;">
+          <span style="font-family:var(--font-display,'Poppins',sans-serif);font-weight:700;font-size:15px;color:var(--slate-900);">Casa en venta</span>
+          <span style="font-size:12px;color:var(--slate-500);">{{ barrio }} · Dueño directo</span>
+        </div>
+      </div>
+      <nav style="display:flex;align-items:center;gap:26px;font-size:14px;font-weight:600;">
+        <sc-if value="{{ notMobile }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;align-items:center;gap:26px;">
+            <a href="#la-casa" style="color:var(--slate-700);">La casa</a>
+            <a href="#fotos" style="color:var(--slate-700);">Fotos</a>
+            <a href="#preguntas" style="color:var(--slate-700);">Preguntas</a>
+          </div>
+        </sc-if>
+        <a href="{{ waLink }}" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;height:38px;padding:0 14px;border-radius:8px;background:#1E9E4F;color:#fff;font-weight:700;font-size:14px;" style-hover="background:#178A43;color:#fff;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"></path><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"></path></svg>
+          <span>WhatsApp</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <section ref="{{ heroRef }}" style="max-width:1280px;margin:0 auto;padding:clamp(12px,2.4vw,28px) clamp(12px,3vw,32px) 0;">
+    <div style="position:relative;border-radius:14px;overflow:hidden;min-height:clamp(520px,72vh,640px);box-shadow:var(--shadow-md);display:flex;flex-wrap:wrap;align-items:flex-end;align-content:flex-end;gap:24px;padding:clamp(18px,3vw,36px);background:var(--blue-950);">
+      <img src="{{ heroSrc }}" alt="Casa en venta" onClick="{{ openHero }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ heroPos }};display:block;cursor:zoom-in;filter:brightness(1.05) contrast(1.05);">
+      <div style="position:absolute;inset:0;background:{{ heroOverlay }};pointer-events:none;"></div>
+      <div style="position:relative;flex:1 1 380px;min-width:0;max-width:640px;display:flex;flex-direction:column;gap:14px;color:#fff;pointer-events:none;">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <x-import component-from-global-scope="TiendasMontevideoDesignSystem_79cd80.Badge" tone="stock" hint-size="70px,22px">EN VENTA</x-import>
+          <x-import component-from-global-scope="TiendasMontevideoDesignSystem_79cd80.Badge" tone="soft" hint-size="200px,22px">{{ tipoPlanta }}</x-import>
+        </div>
+        <h1 style="margin:0;font-family:var(--font-display,'Poppins',sans-serif);font-weight:800;font-size:clamp(30px,4.4vw,54px);line-height:1.06;letter-spacing:-0.01em;text-wrap:balance;">4 dormitorios con ampliación — {{ barrio }}</h1>
+        <p style="margin:0;font-size:clamp(16px,1.5vw,18px);line-height:1.5;color:#fff;text-wrap:pretty;">Venta directa del propietario, sin comisión inmobiliaria.</p>
+      </div>
+      <div style="position:relative;margin-left:auto;flex:0 1 360px;min-width:min(100%,290px);background:#fff;border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:16px;box-shadow:var(--shadow-lg);">
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+          <div style="display:flex;flex-direction:column;gap:2px;">
+            <span style="font-size:11px;font-weight:700;letter-spacing:0.14em;color:var(--slate-500);">PRECIO</span>
+            <span style="font-family:var(--font-display,'Poppins',sans-serif);font-weight:800;font-size:30px;line-height:1.1;color:var(--slate-900);">{{ precio }}</span>
+          </div>
+          <span style="padding:5px 12px;border-radius:999px;background:var(--green-500);color:var(--blue-950);font-size:12px;font-weight:800;letter-spacing:0.04em;">{{ condicion }}</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--slate-200);border:1px solid var(--slate-200);border-radius:8px;overflow:hidden;">
+          <div style="background:#fff;padding:10px 12px;display:flex;flex-direction:column;gap:1px;"><span style="font-family:var(--font-display,'Poppins',sans-serif);font-weight:700;font-size:19px;color:var(--blue-600);">4</span><span style="font-size:13px;">Dormitorios</span></div>
+          <div style="background:#fff;padding:10px 12px;display:flex;flex-direction:column;gap:1px;"><span style="font-family:var(--font-display,'Poppins',sans-serif);font-weight:700;font-size:19px;color:var(--blue-600);">1</span><span style="font-size:13px;">Baño</span></div>
+          <div style="background:#fff;padding:10px 12px;display:flex;flex-direction:column;gap:1px;"><span style="font-family:var(--font-display,'Poppins',sans-serif);font-weight:700;font-size:19px;color:var(--blue-600);">2</span><span style="font-size:13px;">Cocinas</span></div>
+          <div style="background:#fff;padding:10px 12px;display:flex;flex-direction:column;gap:1px;"><span style="font-family:var(--font-display,'Poppins',sans-serif);font-weight:700;font-size:19px;color:var(--blue-600);">100 m²</span><span style="font-size:13px;">Construidos</span></div>
+          <div style="background:#fff;padding:10px 12px;display:flex;flex-direction:column;gap:1px;"><span style="font-family:var(--font-display,'Poppins',sans-serif);font-weight:700;font-size:19px;color:var(--blue-600);">24 m²</span><span style="font-size:13px;">Patio</span></div>
+          <div style="background:#fff;padding:10px 12px;display:flex;flex-direction:column;gap:1px;"><span style="height:28px;display:flex;align-items:center;color:var(--success-500);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span><span style="font-size:13px;">Papeles al día</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <a href="{{ waLink }}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:10px;height:50px;border-radius:8px;background:#1E9E4F;color:#fff;font-family:var(--font-display,'Poppins',sans-serif);font-weight:600;font-size:16px;transition:background 150ms ease;" style-hover="background:#178A43;color:#fff;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"></path><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"></path></svg>
+            <span>Escribir por WhatsApp</span>
+          </a>
+          <x-import component-from-global-scope="TiendasMontevideoDesignSystem_79cd80.Button" variant="secondary" full-width="{{ true }}" onClick="{{ openFirst }}" hint-size="100%,44px">Ver fotos</x-import>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="la-casa" style="max-width:1280px;margin:0 auto;padding:clamp(48px,6vw,72px) clamp(16px,3vw,32px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(28px,4vw,56px);align-items:start;">
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <span style="font-size:12px;font-weight:700;letter-spacing:0.14em;color:var(--blue-600);">LA CASA</span>
+      <h2 style="margin:0;font-family:var(--font-display,'Poppins',sans-serif);font-weight:700;font-size:clamp(26px,3vw,32px);line-height:1.15;color:var(--slate-900);text-wrap:balance;">Espacio para toda la familia, lista para entrar a vivir</h2>
+      <p style="margin:0;font-size:17px;line-height:1.65;text-wrap:pretty;">Casa de 4 dormitorios con una ampliación ya terminada que suma un dormitorio amplio con placard. La distribución separa la zona social (sala, comedor y cocina interior) de los dormitorios, y la cocina exterior resuelve el uso diario y las reuniones. Planta alta con acceso propio por escalera. Ambientes con ventanas y buena luz natural. A pocas cuadras del micro Ortiz.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;">
+      <div style="background:#fff;border:1px solid var(--slate-200);border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:12px;">
+        <span style="width:40px;height:40px;border-radius:999px;background:var(--blue-50,#EAF2FA);color:var(--blue-600);display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><path d="M12 10v6"></path><path d="M9 13h6"></path></svg></span>
+        <span style="font-family:var(--font-display,'Poppins',sans-serif);font-weight:600;font-size:15px;color:var(--slate-900);">Ampliación terminada</span>
+      </div>
+      <div style="background:#fff;border:1px solid var(--slate-200);border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:12px;">
+        <span style="width:40px;height:40px;border-radius:999px;background:var(--blue-50,#EAF2FA);color:var(--blue-600);display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg></span>
+        <span style="font-family:var(--font-display,'Poppins',sans-serif);font-weight:600;font-size:15px;color:var(--slate-900);">Cocina interior + exterior</span>
+      </div>
+      <sc-if value="{{ entradaIndep }}" hint-placeholder-val="{{ true }}">
+        <div style="background:#fff;border:1px solid var(--slate-200);border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:12px;">
+          <span style="width:40px;height:40px;border-radius:999px;background:var(--blue-50,#EAF2FA);color:var(--blue-600);display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4h3a2 2 0 0 1 2 2v14"></path><path d="M2 20h3"></path><path d="M13 20h9"></path><path d="M10 12v.01"></path><path d="M13 4.562v16.157a1 1 0 0 1-1.242.97L5 20V5.562a2 2 0 0 1 1.515-1.94l4-1A2 2 0 0 1 13 4.561Z"></path></svg></span>
+          <span style="font-family:var(--font-display,'Poppins',sans-serif);font-weight:600;font-size:15px;color:var(--slate-900);">Entrada independiente</span>
+        </div>
+      </sc-if>
+      <div style="background:#fff;border:1px solid var(--slate-200);border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:12px;">
+        <span style="width:40px;height:40px;border-radius:999px;background:var(--blue-50,#EAF2FA);color:var(--blue-600);display:flex;align-items:center;justify-content:center;"><x-import component-from-global-scope="TiendasMontevideoDesignSystem_79cd80.Icon" name="truck" size="20" hint-size="20px,20px"></x-import></span>
+        <span style="font-family:var(--font-display,'Poppins',sans-serif);font-weight:600;font-size:15px;color:var(--slate-900);">Lista para mudarse</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="fotos" style="max-width:1280px;margin:0 auto;padding:clamp(48px,6vw,72px) clamp(16px,3vw,32px) 0;display:flex;flex-direction:column;gap:22px;">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <span style="font-size:12px;font-weight:700;letter-spacing:0.14em;color:var(--blue-600);">FOTOS · {{ photoCount }}</span>
+        <h2 style="margin:0;font-family:var(--font-display,'Poppins',sans-serif);font-weight:700;font-size:clamp(26px,3vw,32px);color:var(--slate-900);">Recorré la casa por ambiente</h2>
+      </div>
+      <sc-if value="{{ equipada }}" hint-placeholder-val="{{ false }}">
+        <span style="display:flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--blue-600);color:var(--blue-600);font-size:13px;font-weight:700;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+          <span>Se vende equipada</span>
+        </span>
+      </sc-if>
+    </div>
+    <div style="display:flex;flex-wrap:{{ roomsWrap }};gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 -4px;padding:4px 4px 12px;-webkit-overflow-scrolling:touch;">
+      <sc-for list="{{ rooms }}" as="room" hint-placeholder-count="9">
+        <button onClick="{{ room.open }}" style="all:unset;cursor:pointer;flex:{{ roomFlex }};min-width:0;scroll-snap-align:start;background:#fff;border:1px solid var(--slate-200);border-radius:8px;overflow:hidden;box-shadow:var(--shadow-sm);transition:transform 200ms ease,box-shadow 200ms ease;display:flex;flex-direction:column;" style-hover="transform:translateY(-2px);box-shadow:var(--shadow-md);">
+          <div style="aspect-ratio:4/3;overflow:hidden;background:var(--slate-200);">
+            <img src="{{ room.cover }}" alt="{{ room.name }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(1.05) contrast(1.05);transition:transform 380ms ease;" style-hover="transform:scale(1.05);">
+          </div>
+          <div style="padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:8px;">
+            <div style="display:flex;flex-direction:column;gap:2px;min-width:0;">
+              <span style="font-family:var(--font-display,'Poppins',sans-serif);font-weight:600;font-size:15px;color:var(--slate-900);">{{ room.name }}</span>
+              <span style="font-size:13px;color:var(--slate-500);">{{ room.countLabel }}</span>
+            </div>
+            <span style="color:var(--blue-600);display:flex;flex:none;">
+              <x-import component-from-global-scope="TiendasMontevideoDesignSystem_79cd80.Icon" name="chevronRight" size="18" hint-size="18px,18px"></x-import>
+            </span>
+          </div>
+        </button>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="preguntas" style="max-width:880px;margin:0 auto;padding:clamp(48px,6vw,72px) clamp(16px,3vw,32px) 0;display:flex;flex-direction:column;gap:20px;">
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <span style="font-size:12px;font-weight:700;letter-spacing:0.14em;color:var(--blue-600);">PREGUNTAS FRECUENTES</span>
+      <h2 style="margin:0;font-family:var(--font-display,'Poppins',sans-serif);font-weight:700;font-size:clamp(26px,3vw,32px);color:var(--slate-900);">Lo que todos preguntan</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;background:#fff;border:1px solid var(--slate-200);border-radius:8px;">
+      <div style="border-bottom:1px solid var(--slate-200);">
+        <button onClick="{{ faq0.toggle }}" style="all:unset;cursor:pointer;width:100%;box-sizing:border-box;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:var(--font-display,'Poppins',sans-serif);font-weight:600;font-size:16px;color:var(--slate-900);"><span>¿Los papeles están al día?</span><span style="display:flex;color:var(--blue-600);transition:transform 200ms ease;transform:{{ faq0.rot }};"><x-import component-from-global-scope="TiendasMontevideoDesignSystem_79cd80.Icon" name="chevronDown" size="18" hint-size="18px,18px"></x-import></span></button>
+        <sc-if value="{{ faq0.open }}" hint-placeholder-val="{{ false }}"><p style="margin:0;padding:0 20px 18px;line-height:1.6;">Sí. La documentación está al día y la podés revisar con tu escribano antes de firmar.</p></sc-if>
+      </div>
+      <div style="border-bottom:1px solid var(--slate-200);">
+        <button onClick="{{ faq1.toggle }}" style="all:unset;cursor:pointer;width:100%;box-sizing:border-box;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:var(--font-display,'Poppins',sans-serif);font-weight:600;font-size:16px;color:var(--slate-900);"><span>¿El precio es negociable?</span><span style="display:flex;color:var(--blue-600);transition:transform 200ms ease;transform:{{ faq1.rot }};"><x-import component-from-global-scope="TiendasMontevideoDesignSystem_79cd80.Icon" name="chevronDown" size="18" hint-size="18px,18px"></x-import></span></button>
+        <sc-if value="{{ faq1.open }}" hint-placeholder-val="{{ false }}"><p style="margin:0;padding:0 20px 18px;line-height:1.6;">{{ precioRespuesta }}</p></sc-if>
+      </div>
+      <div style="border-bottom:1px solid var(--slate-200);">
+        <button onClick="{{ faq2.toggle }}" style="all:unset;cursor:pointer;width:100%;box-sizing:border-box;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:var(--font-display,'Poppins',sans-serif);font-weight:600;font-size:16px;color:var(--slate-900);"><span>¿Qué incluye la venta?</span><span style="display:flex;color:var(--blue-600);transition:transform 200ms ease;transform:{{ faq2.rot }};"><x-import component-from-global-scope="TiendasMontevideoDesignSystem_79cd80.Icon" name="chevronDown" size="18" hint-size="18px,18px"></x-import></span></button>
+        <sc-if value="{{ faq2.open }}" hint-placeholder-val="{{ false }}"><p style="margin:0;padding:0 20px 18px;line-height:1.6;">{{ incluyeRespuesta }}</p></sc-if>
+      </div>
+      <div style="border-bottom:1px solid var(--slate-200);">
+        <button onClick="{{ faq3.toggle }}" style="all:unset;cursor:pointer;width:100%;box-sizing:border-box;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:var(--font-display,'Poppins',sans-serif);font-weight:600;font-size:16px;color:var(--slate-900);"><span>¿Se acepta permuta?</span><span style="display:flex;color:var(--blue-600);transition:transform 200ms ease;transform:{{ faq3.rot }};"><x-import component-from-global-scope="TiendasMontevideoDesignSystem_79cd80.Icon" name="chevronDown" size="18" hint-size="18px,18px"></x-import></span></button>
+        <sc-if value="{{ faq3.open }}" hint-placeholder-val="{{ false }}"><p style="margin:0;padding:0 20px 18px;line-height:1.6;">Por ahora no aceptamos permutas: la casa se vende únicamente. Si te interesa comprarla, escribinos y con gusto coordinamos una visita.</p></sc-if>
+      </div>
+      <div>
+        <button onClick="{{ faq4.toggle }}" style="all:unset;cursor:pointer;width:100%;box-sizing:border-box;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:var(--font-display,'Poppins',sans-serif);font-weight:600;font-size:16px;color:var(--slate-900);"><span>¿Cómo coordino una visita?</span><span style="display:flex;color:var(--blue-600);transition:transform 200ms ease;transform:{{ faq4.rot }};"><x-import component-from-global-scope="TiendasMontevideoDesignSystem_79cd80.Icon" name="chevronDown" size="18" hint-size="18px,18px"></x-import></span></button>
+        <sc-if value="{{ faq4.open }}" hint-placeholder-val="{{ false }}"><p style="margin:0;padding:0 20px 18px;line-height:1.6;">Mandanos un mensaje por WhatsApp o llamanos. Te respondemos en el día y acordamos juntos el día y la hora de la visita.</p></sc-if>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" style="max-width:1280px;margin:0 auto;padding:clamp(48px,6vw,72px) clamp(12px,3vw,32px);">
+    <div style="background:var(--blue-950);border-radius:14px;padding:clamp(28px,5vw,56px);display:flex;justify-content:center;text-align:center;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:16px;color:#fff;max-width:560px;width:100%;">
+        <span style="font-size:12px;font-weight:700;letter-spacing:0.14em;color:var(--green-500);">CONTACTO</span>
+        <h2 style="margin:0;font-family:var(--font-display,'Poppins',sans-serif);font-weight:700;font-size:clamp(28px,3.2vw,36px);line-height:1.15;text-wrap:balance;">¿Te interesa? Coordiná una visita</h2>
+        <a href="{{ waLink }}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:12px;height:60px;width:100%;max-width:420px;border-radius:8px;background:#1E9E4F;color:#fff;font-family:var(--font-display,'Poppins',sans-serif);font-weight:700;font-size:18px;transition:background 150ms ease;" style-hover="background:#178A43;color:#fff;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"></path><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"></path></svg>
+          <span>Escribir por WhatsApp</span>
+        </a>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:4px;font-size:15px;">
+          <span style="display:flex;flex-wrap:wrap;justify-content:center;gap:4px 10px;color:#fff;font-weight:600;"><span>Teléfono de la casa:</span><a href="tel:+5333205312" style="color:#fff;" style-hover="color:var(--green-500);">+53 33205312</a><span>o</span><a href="tel:+5358281173" style="color:#fff;" style-hover="color:var(--green-500);">+53 58281173</a></span>
+          <span style="color:#fff;">Respondemos en el día.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showBar }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;border-top:1px solid var(--slate-200);box-shadow:0 -6px 20px rgba(15,23,42,0.10);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;gap:12px;">
+      <div style="display:flex;flex-direction:column;min-width:0;">
+        <span style="font-family:var(--font-display,'Poppins',sans-serif);font-weight:800;font-size:18px;color:var(--slate-900);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ precio }}</span>
+        <span style="font-size:12px;color:var(--slate-500);">{{ condicion }}</span>
+      </div>
+      <a href="{{ waLink }}" target="_blank" rel="noopener" style="flex:none;display:flex;align-items:center;gap:8px;height:48px;padding:0 18px;border-radius:8px;background:#1E9E4F;color:#fff;font-weight:700;font-size:15px;" style-hover="background:#178A43;color:#fff;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"></path><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"></path></svg>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeLb }}" onTouchStart="{{ touchStart }}" onTouchEnd="{{ touchEnd }}" style="position:fixed;inset:0;z-index:50;background:rgba(7,31,51,0.96);display:flex;flex-direction:column;">
+      <div style="flex:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px clamp(14px,3vw,28px);color:#fff;">
+        <span style="font-family:var(--font-display,'Poppins',sans-serif);font-weight:600;font-size:16px;">{{ lb.room }}</span>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <span style="font-size:14px;color:#fff;font-variant-numeric:tabular-nums;">{{ lbCounter }}</span>
+          <button onClick="{{ closeLb }}" aria-label="Cerrar" style="all:unset;cursor:pointer;width:44px;height:44px;border-radius:999px;background:rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;">
+            <x-import component-from-global-scope="TiendasMontevideoDesignSystem_79cd80.Icon" name="x" size="20" color="#fff" hint-size="20px,20px"></x-import>
+          </button>
+        </div>
+      </div>
+      <div style="flex:1;min-height:0;display:flex;align-items:center;justify-content:center;gap:16px;padding:0 clamp(8px,2vw,24px);">
+        <sc-if value="{{ notMobile }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ prev }}" aria-label="Anterior" style="all:unset;cursor:pointer;flex:none;width:48px;height:48px;border-radius:999px;background:rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;transform:rotate(180deg);">
+            <x-import component-from-global-scope="TiendasMontevideoDesignSystem_79cd80.Icon" name="chevronRight" size="22" color="#fff" hint-size="22px,22px"></x-import>
+          </button>
+        </sc-if>
+        <img src="{{ lb.src }}" alt="{{ lb.room }}" onClick="{{ stop }}" style="flex:1;min-width:0;max-width:1200px;max-height:100%;height:100%;object-fit:contain;display:block;filter:brightness(1.05) contrast(1.05);">
+        <sc-if value="{{ notMobile }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ next }}" aria-label="Siguiente" style="all:unset;cursor:pointer;flex:none;width:48px;height:48px;border-radius:999px;background:rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;">
+            <x-import component-from-global-scope="TiendasMontevideoDesignSystem_79cd80.Icon" name="chevronRight" size="22" color="#fff" hint-size="22px,22px"></x-import>
+          </button>
+        </sc-if>
+      </div>
+      <div onClick="{{ stop }}" style="flex:none;display:flex;gap:8px;overflow-x:auto;padding:14px clamp(14px,3vw,28px) calc(14px + env(safe-area-inset-bottom));justify-content:safe center;">
+        <sc-for list="{{ lbRooms }}" as="r" hint-placeholder-count="9">
+          <button onClick="{{ r.go }}" style="all:unset;cursor:pointer;flex:none;padding:8px 14px;border-radius:999px;font-size:13px;font-weight:600;white-space:nowrap;background:{{ r.bg }};color:{{ r.fg }};">{{ r.name }}</button>
+        </sc-for>
+      </div>
+    </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;barrio&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Ortiz&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Datos de la casa&quot;},&quot;precio&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;US$ 12.500&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Datos de la casa&quot;},&quot;condicion&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Negociable&quot;,&quot;Precio final&quot;],&quot;default&quot;:&quot;Negociable&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Datos de la casa&quot;},&quot;m2&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;100&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Datos de la casa&quot;},&quot;terreno&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;24&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Datos de la casa&quot;},&quot;tipoPlanta&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Planta alta con entrada independiente&quot;,&quot;Casa de 2 plantas&quot;],&quot;default&quot;:&quot;Planta alta con entrada independiente&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Datos de la casa&quot;},&quot;equipada&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Datos de la casa&quot;},&quot;whatsapp&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;598XXXXXXXX&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contacto&quot;},&quot;lat&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:-34.8941,&quot;step&quot;:0.0005,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Mapa&quot;},&quot;lng&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:-56.165,&quot;step&quot;:0.0005,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Mapa&quot;},&quot;heroFoto&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Sala&quot;,&quot;Dormitorio con ampliación&quot;,&quot;Frente&quot;],&quot;default&quot;:&quot;Frente&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Diseño&quot;}}">
+const ROOMS = [
+  ['Dormitorio con ampliación', ['cuarto-ampl-2', 'cuarto-ampl-3', 'cuarto-ampl-1']],
+  ['Sala', ['sala-1']],
+  ['Comedor', ['comedor-1']],
+  ['Cocina interior', ['cocina-int-2', 'cocina-int-1']],
+  ['Dormitorio del frente', ['cuarto-frente-2', 'cuarto-frente-1']],
+  ['Dormitorio del medio', ['cuarto-medio-2', 'cuarto-medio-1', 'cuarto-medio-3']],
+  ['Cocina exterior', ['cocina-ext-2', 'cocina-ext-1']],
+  ['Baño', ['bano-1', 'bano-2', 'bano-3']],
+  ['Frente', ['frente']],
+];
+const PHOTOS = ROOMS.flatMap(([room, files]) => files.map(f => ({ src: 'fotos/' + f + '.jpeg', room })));
+const HERO = {
+  'Sala': { src: 'fotos/sala-1.jpeg', pos: 'center 55%', overlay: 'linear-gradient(180deg,rgba(7,31,51,0.05) 25%,rgba(7,31,51,0.85) 100%)' },
+  'Dormitorio con ampliación': { src: 'fotos/cuarto-ampl-2.jpeg', pos: 'center 60%', overlay: 'linear-gradient(180deg,rgba(7,31,51,0.05) 25%,rgba(7,31,51,0.85) 100%)' },
+  'Frente': { src: 'fotos/frente.jpeg', pos: 'center 85%', overlay: 'linear-gradient(180deg,rgba(7,31,51,0.35) 0%,rgba(7,31,51,0.55) 45%,rgba(7,31,51,0.94) 100%)' },
+};
+
+class Component extends DCLogic {
+  state = { lb: null, faq: -1, name: '', phone: '', when: '', sent: false, mobile: false, pastHero: false };
+  heroRef = React.createRef();
+
+  componentDidMount() {
+    this._key = (e) => {
+      if (this.state.lb == null) return;
+      if (e.key === 'Escape') this.setState({ lb: null });
+      if (e.key === 'ArrowRight') this.step(1);
+      if (e.key === 'ArrowLeft') this.step(-1);
+    };
+    this._resize = () => this.setState({ mobile: window.innerWidth < 760 });
+    this._scroll = () => {
+      const el = this.heroRef.current;
+      const past = !!el && el.getBoundingClientRect().bottom < 0;
+      if (past !== this.state.pastHero) this.setState({ pastHero: past });
+    };
+    window.addEventListener('keydown', this._key);
+    window.addEventListener('resize', this._resize);
+    window.addEventListener('scroll', this._scroll, { passive: true });
+    this._resize(); this._scroll();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this._key);
+    window.removeEventListener('resize', this._resize);
+    window.removeEventListener('scroll', this._scroll);
+  }
+  step(d) { this.setState(s => ({ lb: (s.lb + d + PHOTOS.length) % PHOTOS.length })); }
+
+  renderVals() {
+    const p = this.props;
+    const barrio = p.barrio ?? 'Ortiz';
+    const precio = p.precio ?? 'US$ 12.500';
+    const condicion = p.condicion ?? 'Negociable';
+    const numero = String(p.whatsapp ?? '598XXXXXXXX').replace(/\D/g, '');
+    const tipoPlanta = p.tipoPlanta ?? 'Planta alta con entrada independiente';
+    const equipada = p.equipada ?? false;
+    const lat = p.lat ?? -34.8941, lng = p.lng ?? -56.1650;
+    const hero = HERO[p.heroFoto ?? 'Frente'] || HERO['Sala'];
+    const { lb, faq, mobile, sent } = this.state;
+    const msg = `Hola, vi la casa en venta en ${barrio} y me interesa coordinar una visita.`;
+    const faqItem = (i) => ({ open: faq === i, rot: faq === i ? 'rotate(180deg)' : 'none', toggle: () => this.setState(s => ({ faq: s.faq === i ? -1 : i })) });
+    const curRoom = lb != null ? PHOTOS[lb].room : null;
+    const field = (k) => (e) => this.setState({ [k]: e && e.target ? e.target.value : e });
+    return {
+      barrio, precio, condicion, tipoPlanta: tipoPlanta.toUpperCase(), equipada,
+      entradaIndep: tipoPlanta.toLowerCase().includes('independiente'),
+      telefono: '+' + numero,
+      waLink: `https://wa.me/${numero}?text=${encodeURIComponent(msg)}`,
+      heroRef: this.heroRef, heroSrc: hero.src, heroPos: hero.pos, heroOverlay: hero.overlay,
+      notMobile: !mobile,
+      showBar: mobile && this.state.pastHero && lb == null,
+      pagePadBottom: mobile ? '76px' : '0px',
+      roomsWrap: mobile ? 'nowrap' : 'wrap',
+      roomFlex: mobile ? '0 0 78%' : '0 1 calc((100% - 40px) / 3)',
+      photoCount: PHOTOS.length,
+      rooms: ROOMS.map(([name, files]) => ({
+        name, cover: 'fotos/' + files[0] + '.jpeg',
+        countLabel: files.length === 1 ? '1 foto' : files.length + ' fotos',
+        open: () => this.setState({ lb: PHOTOS.findIndex(x => x.room === name) }),
+      })),
+      mapSrc: `https://www.openstreetmap.org/export/embed.html?bbox=${lng - 0.012},${lat - 0.008},${lng + 0.012},${lat + 0.008}&layer=mapnik`,
+      faq0: faqItem(0), faq1: faqItem(1), faq2: faqItem(2), faq3: faqItem(3), faq4: faqItem(4),
+      precioRespuesta: condicion === 'Precio final'
+        ? 'El precio publicado es el precio final.'
+        : 'Sí, hay margen para conversar. Escribinos con tu propuesta y la evaluamos.',
+      incluyeRespuesta: equipada
+        ? 'La casa se vende completa y equipada. Llamanos o escribinos y te contamos todo lo que incluye.'
+        : 'La casa completa: 4 dormitorios, sala-comedor, cocina interior, cocina exterior y baño.',
+      lbOpen: lb != null,
+      lb: lb != null ? PHOTOS[lb] : {},
+      lbCounter: lb != null ? (lb + 1) + ' / ' + PHOTOS.length : '',
+      lbRooms: ROOMS.map(([name]) => ({
+        name,
+        bg: name === curRoom ? '#fff' : 'rgba(255,255,255,0.14)',
+        fg: name === curRoom ? 'var(--blue-950)' : '#fff',
+        go: (e) => { e.stopPropagation(); this.setState({ lb: PHOTOS.findIndex(x => x.room === name) }); },
+      })),
+      openHero: () => this.setState({ lb: Math.max(0, PHOTOS.findIndex(x => x.src === hero.src)) }),
+      openFirst: () => this.setState({ lb: 0 }),
+      closeLb: () => this.setState({ lb: null }),
+      prev: (e) => { e.stopPropagation(); this.step(-1); },
+      next: (e) => { e.stopPropagation(); this.step(1); },
+      stop: (e) => e.stopPropagation(),
+      touchStart: (e) => { this._tx = e.touches[0].clientX; },
+      touchEnd: (e) => {
+        const dx = e.changedTouches[0].clientX - (this._tx ?? 0);
+        if (Math.abs(dx) > 40) { this._swiped = true; this.step(dx < 0 ? 1 : -1); }
+      },
+      name: this.state.name, phone: this.state.phone, when: this.state.when,
+      setName: field('name'), setPhone: field('phone'), setWhen: field('when'),
+      send: () => { if (this.state.name.trim() && this.state.phone.trim()) this.setState({ sent: true }); },
+      sent, notSent: !sent,
+    };
+  }
+}
+</script>
+</body>
+</html>
