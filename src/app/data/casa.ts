@@ -4,7 +4,7 @@
  */
 
 /** Dominio público final (sin barra al final). Se usa para canonical y og:image absolutos. */
-export const SITE_URL = 'https://www.example.com'; // TODO: reemplazar por el dominio real antes de publicar
+export const SITE_URL = 'https://vendo-casa-ortiz.vercel.app';
 
 export type Condicion = 'Negociable' | 'Precio final';
 export type TipoPlanta = 'Planta alta con entrada independiente' | 'Casa de 2 plantas';

@@ -28,7 +28,7 @@
             "server": "src/main.server.ts",
             "outputMode": "server",
             "security": {
-              "allowedHosts": ["localhost", "www.example.com", "example.com"]
+              "allowedHosts": ["localhost", "vendo-casa-ortiz.vercel.app"]
             },
             "ssr": {
               "entry": "src/server.ts"

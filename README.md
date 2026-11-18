@@ -31,7 +31,7 @@ correspondiente de `ROOM_DEFS` y correr `npm run images`.
 
 ## Antes de publicar
 
-1. **Dominio:** reemplazar `SITE_URL` en `src/app/data/casa.ts` (hoy es `https://www.example.com`) y correr
+1. **Dominio:** reemplazar `SITE_URL` en `src/app/data/casa.ts` (hoy es `https://vendo-casa-ortiz.vercel.app`) y correr
    `npm run seo-files && npm run build`. Es necesario para que `og:image` y `canonical` sean URLs absolutas
    correctas (WhatsApp/Facebook no muestran la vista previa si no).
 2. Confirmar con el dueño: número de WhatsApp, moneda, `tipoPlanta` y `equipada`.
