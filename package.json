@@ -9,10 +9,10 @@
     "test": "ng test",
     "serve:ssr:my-home": "node dist/my-home/server/server.mjs",
     "images": "node scripts/optimize-images.mjs",
-    "og": "node scripts/og-image.mjs",
+    "og": "ng build && node scripts/og-image.mjs",
     "icons": "node scripts/icons.mjs",
     "seo-files": "node scripts/seo-files.mjs",
-    "assets": "npm run images && npm run og && npm run seo-files"
+    "assets": "npm run images && npm run seo-files && npm run og"
   },
   "private": true,
   "packageManager": "npm@11.19.1",

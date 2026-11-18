@@ -118,13 +118,17 @@ export const FAQS: readonly Faq[] = [
   },
 ];
 
+/**
+ * Textos para buscadores y redes. Largos pensados para no cortarse:
+ * title ≤ 60 caracteres, description ≤ 160 (Google), ogTitle ≤ 70 (WhatsApp/Facebook).
+ */
 export const SEO = {
-  title: 'Casa 4 dormitorios con ampliación en venta – directo del propietario',
-  description: `Casa de 4 dormitorios con ampliación en venta en ${CASA.barrio}. ${CASA.precio}. Venta directa del propietario, sin comisión inmobiliaria.`,
-  ogTitle: `4 dormitorios con ampliación — ${CASA.barrio} · ${CASA.precio}`,
+  title: `Casa en venta en ${CASA.barrio} · 4 dormitorios · ${CASA.precio}`,
+  description: `Casa de 4 dormitorios con ampliación en venta en ${CASA.barrio}. ${CASA.precio} ${CASA.condicion.toLowerCase()}, papeles al día. Venta directa del propietario, sin comisión inmobiliaria.`,
+  ogTitle: `Casa en venta en ${CASA.barrio} · 4 dormitorios con ampliación · ${CASA.precio}`,
   ogDescription:
-    'Venta directa del propietario, sin comisión inmobiliaria. 4 dormitorios, 2 cocinas, papeles al día.',
-  /** Imagen 1200×630 generada por scripts/optimize-images.mjs */
+    'Venta directa del propietario, sin comisión. 4 dormitorios, 2 cocinas, 100 m², patio de 24 m² y papeles al día. Escribinos por WhatsApp y coordiná una visita.',
+  /** Captura 1200×630 del header + hero del sitio, generada por `npm run og` (scripts/og-image.mjs). */
   ogImage: '/og/og-frente.jpg',
-  ogImageAlt: `Frente de la casa en venta en ${CASA.barrio}`,
+  ogImageAlt: `Casa en venta en ${CASA.barrio}: 4 dormitorios con ampliación, ${CASA.precio}`,
 } as const;
