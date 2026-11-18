@@ -1,0 +1,97 @@
+@if (store.photo(); as photo) {
+  <dialog
+    #dialog
+    role="dialog"
+    aria-modal="true"
+    aria-label="Fotos de la casa"
+    aria-describedby="lightbox-status"
+    class="fixed inset-0 z-50 m-0 flex size-full max-h-none max-w-none flex-col overflow-hidden border-0 bg-[rgba(7,31,51,0.96)] p-0 text-white transition-opacity duration-200 ease-standard starting:opacity-0 backdrop:bg-transparent"
+    (click)="onDialogClick($event)"
+    (cancel)="onCancel($event)"
+    (close)="store.close()"
+  >
+    <!-- Barra superior: ambiente · contador + cerrar -->
+    <div
+      class="flex flex-none items-center justify-between gap-3 px-[clamp(14px,3vw,28px)] pt-[calc(14px+env(safe-area-inset-top))] pb-3.5"
+    >
+      <h2 class="min-w-0 truncate font-display text-base font-semibold">{{ photo.room }}</h2>
+      <div class="flex flex-none items-center gap-3.5">
+        <span class="text-sm tabular-nums" aria-hidden="true">{{ position() }} / {{ total }}</span>
+        <button
+          #closeButton
+          type="button"
+          aria-label="Cerrar"
+          class="grid size-11 cursor-pointer place-items-center rounded-full bg-white/14 text-white transition-colors duration-150 hover:bg-white/25 focus-visible:outline-white"
+          (click)="store.close()"
+        >
+          <app-icon name="x" [size]="20" />
+        </button>
+      </div>
+    </div>
+
+    <!-- Foto + flechas (en mobile se navega con swipe) -->
+    <div
+      appSwipe
+      class="flex min-h-0 flex-1 items-center justify-center gap-4 px-[clamp(8px,2vw,24px)] select-none"
+      (swiped)="step($event)"
+    >
+      <button
+        type="button"
+        aria-label="Foto anterior"
+        class="grid size-12 flex-none cursor-pointer place-items-center rounded-full bg-white/14 text-white transition-colors duration-150 hover:bg-white/25 focus-visible:outline-white max-md:hidden"
+        (click)="store.prev()"
+      >
+        <app-icon name="chevronLeft" [size]="22" />
+      </button>
+
+      <div class="relative h-full max-w-[1200px] min-w-0 flex-1">
+        <img
+          [ngSrc]="photo.name"
+          [ngSrcset]="ngSrcset"
+          [sizes]="sizes"
+          fill
+          priority
+          [alt]="photo.alt"
+          draggable="false"
+          class="photo-filter object-contain"
+          (load)="onImageLoad($event)"
+        />
+      </div>
+
+      <button
+        type="button"
+        aria-label="Foto siguiente"
+        class="grid size-12 flex-none cursor-pointer place-items-center rounded-full bg-white/14 text-white transition-colors duration-150 hover:bg-white/25 focus-visible:outline-white max-md:hidden"
+        (click)="store.next()"
+      >
+        <app-icon name="chevronRight" [size]="22" />
+      </button>
+    </div>
+
+    <!-- Chips de ambientes -->
+    <div
+      #chipRow
+      role="group"
+      aria-label="Ambientes"
+      data-keep-open
+      class="flex flex-none justify-center-safe gap-2 overflow-x-auto overscroll-x-contain px-[clamp(14px,3vw,28px)] pt-3.5 pb-[calc(14px+env(safe-area-inset-bottom))] [scrollbar-color:rgb(255_255_255/0.3)_transparent] max-md:scrollbar-none md:[scrollbar-width:thin]"
+    >
+      @for (room of rooms; track room.name; let i = $index) {
+        <button
+          #chip
+          type="button"
+          class="flex-none cursor-pointer rounded-full px-3.5 py-2 text-[13px] font-semibold whitespace-nowrap transition-colors duration-150 focus-visible:outline-white"
+          [class]="i === activeRoomIndex() ? 'bg-white text-brand-950' : 'bg-white/14 text-white hover:bg-white/25'"
+          [attr.aria-current]="i === activeRoomIndex() ? 'true' : null"
+          (click)="store.open(room.firstIndex)"
+        >
+          {{ room.name }}
+        </button>
+      }
+    </div>
+
+    <p id="lightbox-status" class="sr-only" aria-live="polite" aria-atomic="true">
+      {{ photo.room }}, foto {{ position() }} de {{ total }}
+    </p>
+  </dialog>
+}

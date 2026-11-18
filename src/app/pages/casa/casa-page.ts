@@ -14,7 +14,7 @@ import { Seo } from '../../core/seo';
   selector: 'app-casa-page',
   imports: [SiteHeader, Hero, LaCasa, RoomGallery, FaqAccordion, ContactCta, MobileStickyBar, Lightbox],
   // En mobile se reserva espacio para la barra fija inferior (76px) así no tapa el contacto.
-  host: { class: 'block min-h-screen bg-slate-50 max-md:pb-[76px]' },
+  host: { class: 'block min-h-screen bg-slate-50 max-md:pb-[calc(76px+env(safe-area-inset-bottom))]' },
   template: `
     <app-site-header />
     <main>
@@ -26,8 +26,8 @@ import { Seo } from '../../core/seo';
     </main>
     <app-mobile-sticky-bar />
 
-    <!-- El visor solo se descarga cuando se abre por primera vez -->
-    @defer (when lightbox.isOpen()) {
+    <!-- El visor es un chunk aparte: se precarga en idle y se monta al abrirse por primera vez -->
+    @defer (when lightbox.isOpen(); prefetch on idle) {
       <app-lightbox />
     }
   `,
