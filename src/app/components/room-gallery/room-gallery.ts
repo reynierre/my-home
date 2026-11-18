@@ -3,6 +3,7 @@ import { Component, inject } from '@angular/core';
 import { LightboxStore } from '../../core/lightbox-store';
 import { CASA, PHOTOS, ROOMS } from '../../data/casa';
 import { Icon } from '../../shared/icon/icon';
+import { MobilePhotoCarousel } from './mobile-photo-carousel';
 
 interface RoomCard {
   readonly name: string;
@@ -23,12 +24,14 @@ const ROOM_CARDS: readonly RoomCard[] = ROOMS.map((room) => {
 });
 
 /**
- * Tarjetas por ambiente. Desktop: 3 por fila (flex-wrap).
- * Mobile (< 760px): carrusel horizontal con scroll-snap, solo CSS.
+ * Galería de fotos.
+ * Desktop (≥ 760px): tarjetas por ambiente, 3 por fila (flex-wrap).
+ * Mobile (< 760px): carrusel filtrable por ambiente (MobilePhotoCarousel).
+ * Cada bloque se oculta por CSS en el otro breakpoint; sus imágenes son lazy, así que no se descargan.
  */
 @Component({
   selector: 'app-room-gallery',
-  imports: [NgOptimizedImage, Icon],
+  imports: [NgOptimizedImage, Icon, MobilePhotoCarousel],
   host: { class: 'block' },
   template: `
     <section
@@ -52,13 +55,13 @@ const ROOM_CARDS: readonly RoomCard[] = ROOMS.map((room) => {
       </div>
 
       <div
-        class="-mx-1 flex snap-x snap-mandatory flex-wrap gap-5 overflow-x-auto px-1 pt-1 pb-3 max-md:flex-nowrap"
+        class="-mx-1 flex snap-x snap-mandatory flex-wrap gap-5 overflow-x-auto px-1 pt-1 pb-3 max-md:hidden"
       >
         @for (room of rooms; track room.name) {
           <!-- Nombre accesible = texto visible (nombre + cantidad); la portada es decorativa -->
           <button
             type="button"
-            class="group flex min-w-0 flex-[0_1_calc((100%_-_40px)_/_3)] cursor-pointer snap-start flex-col overflow-hidden rounded-md border border-slate-200 bg-white text-left shadow-sm transition-[translate,box-shadow] duration-200 ease-[ease] hover:-translate-y-0.5 hover:shadow-md max-md:flex-[0_0_78%]"
+            class="group flex min-w-0 flex-[0_1_calc((100%_-_40px)_/_3)] cursor-pointer snap-start flex-col overflow-hidden rounded-md border border-slate-200 bg-white text-left shadow-sm transition-[translate,box-shadow] duration-200 ease-[ease] hover:-translate-y-0.5 hover:shadow-md"
             (click)="open(room.firstIndex)"
           >
             <span class="relative block aspect-[4/3] w-full overflow-hidden bg-slate-200">
@@ -83,6 +86,8 @@ const ROOM_CARDS: readonly RoomCard[] = ROOMS.map((room) => {
           </button>
         }
       </div>
+
+      <app-mobile-photo-carousel />
     </section>
   `,
 })

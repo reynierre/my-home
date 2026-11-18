@@ -19,10 +19,28 @@ import { Seo } from '../../core/seo';
     <app-site-header />
     <main>
       <app-hero />
-      <app-la-casa />
-      <app-room-gallery />
-      <app-faq-accordion />
-      <app-contact-cta />
+
+      <!--
+        Hidratación incremental: el HTML de todas las secciones llega completo desde el servidor
+        (SEO intacto), pero el JS de cada una se descarga e hidrata recién cuando hace falta.
+        Las secciones sin interacción (solo texto y links) no se hidratan nunca.
+      -->
+      @defer (hydrate never) {
+        <app-la-casa />
+      }
+      @defer (on viewport; hydrate on viewport) {
+        <app-room-gallery />
+      } @placeholder {
+        <div class="min-h-[600px]"></div>
+      }
+      @defer (on viewport; hydrate on viewport) {
+        <app-faq-accordion />
+      } @placeholder {
+        <div class="min-h-[400px]"></div>
+      }
+      @defer (hydrate never) {
+        <app-contact-cta />
+      }
     </main>
     <app-mobile-sticky-bar />
 

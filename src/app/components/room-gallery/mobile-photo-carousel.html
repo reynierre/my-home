@@ -1,0 +1,110 @@
+<!-- Filtro por ambiente: fila scrolleable de borde a borde, con fade a la derecha mientras haya más chips -->
+<div
+  #chipRow
+  role="group"
+  aria-label="Filtrar por ambiente"
+  class="relative -mx-(--gutter) flex scroll-px-(--gutter) gap-2 overflow-x-auto overscroll-x-contain px-(--gutter) py-1 scrollbar-none [mask-image:linear-gradient(to_right,#000_calc(100%_-_48px),transparent)] data-[end=true]:[mask-image:none]"
+  [attr.data-end]="chipsAtEnd()"
+>
+  @for (chip of chips; track chip.label) {
+    <button
+      #chipButton
+      type="button"
+      class="group relative inline-flex h-9 flex-none cursor-pointer items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3.5 text-[13px] font-semibold whitespace-nowrap text-slate-700 transition-colors duration-150 ease-standard before:absolute before:inset-x-0 before:-inset-y-0.5 focus-visible:outline-offset-0 aria-pressed:border-brand-950 aria-pressed:bg-brand-950 aria-pressed:text-white"
+      [attr.aria-pressed]="filter() === chip.room"
+      (click)="selectFilter(chip.room, chipButton)"
+    >
+      {{ chip.label }}<span class="sr-only">, {{ chip.countLabel }}</span>
+      <span
+        aria-hidden="true"
+        class="inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-slate-100 px-1.5 text-[11px] font-bold text-slate-500 tabular-nums transition-colors duration-150 ease-standard group-aria-pressed:bg-white/15 group-aria-pressed:text-white"
+        >{{ chip.count }}</span
+      >
+    </button>
+  }
+</div>
+
+<div role="region" aria-roledescription="carrusel" aria-label="Fotos de la casa" class="mt-3">
+  <!-- Pista de borde a borde: el padding la alinea con el contenido y la foto siguiente asoma a la derecha.
+       gap = gutter: la foto anterior queda justo fuera de pantalla (sin una franjita en el borde izquierdo). -->
+  <div
+    #track
+    class="relative -mx-(--gutter) flex snap-x snap-mandatory scroll-px-(--gutter) gap-(--gutter) overflow-x-auto overscroll-x-contain px-(--gutter) pt-1 pb-3 scrollbar-none"
+    (scrollend)="clearPending()"
+    (pointerdown)="clearPending()"
+  >
+    @for (photo of photos(); track photo.name; let i = $index, n = $count) {
+      <button
+        #slide
+        type="button"
+        class="group relative aspect-[4/5] flex-none cursor-pointer snap-start overflow-hidden rounded-lg bg-slate-200 shadow-sm [content-visibility:auto]"
+        [style.flex-basis.%]="n === 1 ? 100 : 86"
+        [attr.data-index]="i"
+        attr.aria-label="Ver foto {{ i + 1 }} de {{ n }}: {{ photo.room }} en pantalla completa"
+        (click)="openPhoto(photo)"
+      >
+        <img
+          [ngSrc]="photo.src"
+          fill
+          ngSrcset="480w, 768w, 1080w"
+          sizes="86vw"
+          alt=""
+          class="photo-filter object-cover"
+        />
+        <span
+          aria-hidden="true"
+          class="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-brand-950/55 to-transparent"
+        ></span>
+        <span
+          aria-hidden="true"
+          class="absolute bottom-3 left-3 max-w-[calc(100%-24px)] truncate rounded-full bg-white/95 px-2.5 py-1 text-[12px] font-semibold text-slate-900"
+          >{{ photo.room }}</span
+        >
+        <span
+          aria-hidden="true"
+          class="absolute top-3 right-3 flex size-8 items-center justify-center rounded-full bg-black/45 text-white"
+        >
+          <app-icon name="maximize2" [size]="16" />
+        </span>
+      </button>
+    }
+  </div>
+
+  <p class="sr-only" aria-live="polite" aria-atomic="true">
+    Foto {{ current() + 1 }} de {{ total() }}, {{ currentPhoto().room }}
+  </p>
+
+  @if (total() > 1) {
+    <div class="mt-1 flex items-center gap-4">
+      <span aria-hidden="true" class="min-w-[5ch] text-[13px] text-slate-500 tabular-nums"
+        ><span class="font-semibold text-slate-900">{{ current() + 1 }}</span> / {{ total() }}</span
+      >
+      <div aria-hidden="true" class="h-1 flex-1 overflow-hidden rounded-full bg-slate-200">
+        <div
+          class="h-full rounded-full bg-brand-600 transition-[width] duration-200 ease-standard"
+          [style.width.%]="progress()"
+        ></div>
+      </div>
+      <div class="flex gap-2">
+        <button
+          type="button"
+          aria-label="Foto anterior"
+          [attr.aria-disabled]="atStart()"
+          class="flex size-10 cursor-pointer items-center justify-center rounded-full border border-slate-200 bg-white text-brand-600 shadow-sm transition-opacity duration-150 aria-disabled:cursor-default aria-disabled:opacity-40"
+          (click)="step(-1)"
+        >
+          <app-icon name="chevronLeft" [size]="18" />
+        </button>
+        <button
+          type="button"
+          aria-label="Foto siguiente"
+          [attr.aria-disabled]="atEnd()"
+          class="flex size-10 cursor-pointer items-center justify-center rounded-full border border-slate-200 bg-white text-brand-600 shadow-sm transition-opacity duration-150 aria-disabled:cursor-default aria-disabled:opacity-40"
+          (click)="step(1)"
+        >
+          <app-icon name="chevronRight" [size]="18" />
+        </button>
+      </div>
+    </div>
+  }
+</div>

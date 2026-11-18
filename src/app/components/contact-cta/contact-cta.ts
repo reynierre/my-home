@@ -40,7 +40,12 @@ interface Telefono {
                 @if (!first) {
                   <span>o</span>
                 }
-                <a [href]="tel.href" class="text-white hover:text-lime-500">{{ tel.label }}</a>
+                <!-- Área táctil de 40px+ (py) sin mover el layout (-my equivalente) -->
+                <a
+                  [href]="tel.href"
+                  class="-my-[11px] inline-flex items-center py-[11px] text-white hover:text-lime-500"
+                  >{{ tel.label }}</a
+                >
               }
             </span>
             <span class="text-white">Respondemos en el día.</span>
