@@ -40,28 +40,6 @@ export const WHATSAPP_URL = `https://wa.me/${CASA.whatsapp}?text=${encodeURIComp
 /** `tel:` href a partir de un número con espacios: '+53 33205312' → 'tel:+5333205312'. */
 export const telHref = (telefono: string): string => `tel:${telefono.replace(/\s+/g, '')}`;
 
-/** Tamaño original de cada foto (px). Se usa para width/height de NgOptimizedImage (evita CLS). */
-export const PHOTO_SIZE: Record<string, { readonly width: number; readonly height: number }> = {
-  'bano-1': { width: 720, height: 1600 },
-  'bano-2': { width: 720, height: 1600 },
-  'bano-3': { width: 720, height: 1600 },
-  'cocina-ext-1': { width: 720, height: 1600 },
-  'cocina-ext-2': { width: 720, height: 1600 },
-  'cocina-int-1': { width: 720, height: 1600 },
-  'cocina-int-2': { width: 720, height: 1600 },
-  'comedor-1': { width: 720, height: 1600 },
-  'cuarto-ampl-1': { width: 1600, height: 720 },
-  'cuarto-ampl-2': { width: 720, height: 1600 },
-  'cuarto-ampl-3': { width: 720, height: 1600 },
-  'cuarto-frente-1': { width: 720, height: 1600 },
-  'cuarto-frente-2': { width: 720, height: 1600 },
-  'cuarto-medio-1': { width: 720, height: 1600 },
-  'cuarto-medio-2': { width: 720, height: 1600 },
-  'cuarto-medio-3': { width: 720, height: 1600 },
-  frente: { width: 1600, height: 720 },
-  'sala-1': { width: 1600, height: 720 },
-};
-
 export interface Room {
   readonly name: string;
   /** Nombres de foto (sin extensión). La primera es la portada. */

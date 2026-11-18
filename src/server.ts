@@ -14,6 +14,13 @@ const browserDistFolder = join(import.meta.dirname, '../browser');
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
+// No anunciar el framework del server; y que el browser respete el Content-Type declarado.
+app.disable('x-powered-by');
+app.use((_req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  next();
+});
+
 /**
  * Políticas de caché:
  * - Archivos del build con hash en el nombre (main-ABCD1234.js, media/…-ABCD1234.woff2):

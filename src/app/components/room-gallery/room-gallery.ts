@@ -8,8 +8,6 @@ interface RoomCard {
   readonly name: string;
   readonly cover: string;
   readonly countLabel: string;
-  /** Nombre accesible del botón (igual al texto visible, sin repetir el alt de la portada). */
-  readonly ariaLabel: string;
   readonly firstIndex: number;
 }
 
@@ -17,9 +15,9 @@ const ROOM_CARDS: readonly RoomCard[] = ROOMS.map((room) => {
   const countLabel = room.photos.length === 1 ? '1 foto' : `${room.photos.length} fotos`;
   return {
     name: room.name,
-    cover: room.photos[0],
+    // Portada pre-recortada a 4:3 (scripts/optimize-images.mjs): no se descargan píxeles que no se ven.
+    cover: `portadas/${room.photos[0]}`,
     countLabel,
-    ariaLabel: `${room.name}, ${countLabel}`,
     firstIndex: room.firstIndex,
   };
 });
@@ -57,10 +55,10 @@ const ROOM_CARDS: readonly RoomCard[] = ROOMS.map((room) => {
         class="-mx-1 flex snap-x snap-mandatory flex-wrap gap-5 overflow-x-auto px-1 pt-1 pb-3 max-md:flex-nowrap"
       >
         @for (room of rooms; track room.name) {
+          <!-- Nombre accesible = texto visible (nombre + cantidad); la portada es decorativa -->
           <button
             type="button"
             class="group flex min-w-0 flex-[0_1_calc((100%_-_40px)_/_3)] cursor-pointer snap-start flex-col overflow-hidden rounded-md border border-slate-200 bg-white text-left shadow-sm transition-[translate,box-shadow] duration-200 ease-[ease] hover:-translate-y-0.5 hover:shadow-md max-md:flex-[0_0_78%]"
-            [attr.aria-label]="room.ariaLabel"
             (click)="open(room.firstIndex)"
           >
             <span class="relative block aspect-[4/3] w-full overflow-hidden bg-slate-200">
@@ -69,7 +67,7 @@ const ROOM_CARDS: readonly RoomCard[] = ROOMS.map((room) => {
                 fill
                 ngSrcset="480w, 768w, 1080w"
                 sizes="(min-width: 1280px) 392px, (min-width: 760px) 31vw, 78vw"
-                [alt]="room.name"
+                alt=""
                 class="photo-filter object-cover transition-transform duration-[380ms] ease-[ease] group-hover:scale-105"
               />
             </span>
